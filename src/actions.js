@@ -1,8 +1,8 @@
-import * as actions from './actionTypes'
+import * as actionTypes from './actionTypes'
 
 export function bugAdded(description){
     return {
-        type: actions.BUG_ADDED,
+        type: actionTypes.BUG_ADDED,
         payload: {
             description: description
         }
@@ -12,7 +12,7 @@ export function bugAdded(description){
 export function bugRemoved(id) {
 
     return {
-        type: actions.BUG_REMOVED,
+        type: actionTypes.BUG_REMOVED,
         payload: {
             id: id
         }
