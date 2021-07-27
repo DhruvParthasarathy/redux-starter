@@ -1,4 +1,6 @@
 import store from './store'
+import {bugAdded , bugRemoved} from './actions'
+
 
 /**
  * the subscribe method of the store acts as a listener to the store and whenever the store's state changes, this function defined inside it gets triggered, a console.log in this case
@@ -15,14 +17,7 @@ const unsubscribe = store.subscribe( () => {
     console.log("Store change listened ===========>", store.getState())
 })
 
-store.dispatch(
-    {
-        type: "bugAdded",
-        payload: {
-            description:"Bug1"
-        }
-    }
-)
+store.dispatch(bugAdded('Bug 1'))
 
 unsubscribe()
 
@@ -30,13 +25,10 @@ unsubscribe()
 /**
  * Given that we have unsubscribed above, the below dispatch event will happen, but the callback of the subscribe method will not be called
  */
-store.dispatch(
-    {
-        type: 'bugRemoved',
-        payload: {
-            id: 1
-        }
-    }
-)
+store.dispatch(bugRemoved(1))
 
 console.log(store.getState());
+
+/**
+ * One problem which we can notice in the above implementation is that for every action which we have to dispatch we have to recrete the entire action object. Hence to handle this we have a new file called as actions.js
+ */
