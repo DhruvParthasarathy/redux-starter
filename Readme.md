@@ -47,3 +47,8 @@ _Example actions:_
 
 ```
 
+### Defining the implementation for a new action
+
+Step1 : Define the action variable in the actionTypes.js file
+Step2 : Define the action payload in the actions.js file
+Step3 : Define the action's business logic in the reducer.js file

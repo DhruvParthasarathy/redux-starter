@@ -1,5 +1,5 @@
 import store from './store'
-import {bugAdded , bugRemoved} from './actions'
+import {bugAdded , bugRemoved, bugResolved} from './actions'
 
 
 /**
@@ -19,13 +19,18 @@ const unsubscribe = store.subscribe( () => {
 
 store.dispatch(bugAdded('Bug 1'))
 
-unsubscribe()
+// unsubscribe()
+
 
 
 /**
  * Given that we have unsubscribed above, the below dispatch event will happen, but the callback of the subscribe method will not be called
  */
+
+store.dispatch(bugResolved(1))
+
 store.dispatch(bugRemoved(1))
+
 
 console.log(store.getState());
 
