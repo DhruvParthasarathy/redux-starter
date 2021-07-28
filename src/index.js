@@ -14,7 +14,6 @@ import {bugAdded , bugRemoved, bugResolved, cakeOrdered} from './actions'
  * store.subscribe also returns a function which when called removes the listener from the store, thereby preventing durther dispatch events from being listened to, but the dispatch event is still processed
  */
 const unsubscribe = store.subscribe( () => {
-    console.log("Store change listened ===========>", store.getState())
 })
 
 store.dispatch(bugAdded('Bug 1'))
@@ -34,8 +33,6 @@ store.dispatch(bugRemoved(1))
 store.dispatch(cakeOrdered()) // number of cakes will become 9
 
 store.dispatch(cakeOrdered()) // number of cakes will become 8
-
-console.log(store.getState());
 
 /**
  * One problem which we can notice in the above implementation is that for every action which we have to dispatch we have to recrete the entire action object. Hence to handle this we have a new file called as actions.js

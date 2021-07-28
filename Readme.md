@@ -52,3 +52,13 @@ _Example actions:_
 Step1 : Define the action variable in the actionTypes.js file
 Step2 : Define the action payload in the actions.js file
 Step3 : Define the action's business logic in the reducer.js file
+
+# Redux Middleware
+
+- This is the suggested way to extend Redux with custom functionlality
+
+- Provides a third-party extension point between dispatching an action, and the moment it reaches the reducer
+
+- Using middleware for logging, crash reporting, performing async tasks etc
+
+We will be using the [redux-logger package from npm](https://www.npmjs.com/package/redux-logger) 

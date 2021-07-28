@@ -12,6 +12,7 @@
   "devDependencies": {
     "lodash": "4.17.21",
     "redux": "4.1.0",
+    "redux-logger": "3.0.6",
     "webpack": "4.41.6",
     "webpack-cli": "3.3.11",
     "webpack-dev-server": "3.10.3"
