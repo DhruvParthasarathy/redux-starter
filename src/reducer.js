@@ -2,7 +2,12 @@ import * as actions from './actionTypes'
 
 let lastId = 0;
 
-export default function reducer(state = [], action) {
+let cakeInitialState = {
+    numberOfCakes : 10
+}
+// At times we will need to have multiple reducers to separate concerns 
+
+export function bugReducer(state = [], action) {
 
     if ( action.type == actions.BUG_ADDED)
         return [
@@ -33,4 +38,15 @@ export default function reducer(state = [], action) {
     }
 
     return state;
+}
+
+export function cakeReducer(state = cakeInitialState, action) {
+
+    switch (action.type) {
+        case actions.CAKE_ORDERED : 
+            return {...state, numberOfCakes: state.numberOfCakes - 1}
+
+        default: 
+            return {...state}
+    }
 }

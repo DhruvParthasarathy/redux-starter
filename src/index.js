@@ -1,5 +1,5 @@
 import store from './store'
-import {bugAdded , bugRemoved, bugResolved} from './actions'
+import {bugAdded , bugRemoved, bugResolved, cakeOrdered} from './actions'
 
 
 /**
@@ -31,6 +31,9 @@ store.dispatch(bugResolved(1))
 
 store.dispatch(bugRemoved(1))
 
+store.dispatch(cakeOrdered()) // number of cakes will become 9
+
+store.dispatch(cakeOrdered()) // number of cakes will become 8
 
 console.log(store.getState());
 

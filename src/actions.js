@@ -28,3 +28,12 @@ export const bugResolved = id => (
         }
     }
 )
+
+export const cakeOrdered = () => (
+    {
+    
+        type: actionTypes.CAKE_ORDERED,
+        payload: {}
+    
+    
+})
